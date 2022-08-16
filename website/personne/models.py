@@ -9,7 +9,7 @@ class Personne(models.Model):
                               choices=(('H', 'Homme'), ('F', 'Femme')),
                               blank=False,
                               default=None)
-    dateDeNaissance = models.DateField
+    dateDeNaissance = models.DateField(auto_now=False, null=True, blank=True)
     deceder = models.BooleanField(default=True)
     mere = models.ForeignKey('self',
                                models.SET_NULL,
